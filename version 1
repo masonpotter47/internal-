@@ -1,0 +1,83 @@
+import emoji
+
+score = 0
+num_of_q = 4
+
+
+def validate_text_input(prompt, options):
+    print(options)
+    while True:
+        try:
+            text_input = input(prompt)
+            return text_input
+        except TypeError:
+            print("Please enter text")
+
+
+def correct_ans():
+    print("Nice! \U0001f600")
+    score += 1
+
+
+def play_again():
+    go_again = input("Would you like to take the quiz again? type (yes/no): ")
+    if go_again.lower() == "yes":
+        return True
+    else:
+        print("""
+        ################################
+        Thank you for taking the quiz
+        ################################
+        """)
+        return False
+
+
+# Start of enviro friendly quiz
+
+print("Welcome to how environmentally friendly are you?")
+
+quiz = input("Would you like to take the quiz? type (yes/no): ")
+if quiz.lower() == "yes" or "y":
+    que = input("Question 1: Do you walk or drive to work/school?: ")
+    if que.lower() == "walk":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que.lower() == "drive":
+        print("Do better")
+
+    que_2 = input("Question 2: Do you or your household separate your rubbish and recycling?: ")
+    if que_2.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_2.lower() == "no":
+        print("Do better")
+
+    que_3 = input("Question 3: Do you use any solar power in your household?: ")
+    if que_3.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_3.lower() == "no":
+        print("Do better")
+
+    que_4 = input("Question 4: Do you donate clothes?: ")
+    if que_4.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_4.lower() == "no":
+        print("Do better")
+
+    # Not sure how to make it so that when the user enters "no" the programme doesn't run.
+    else:
+        pass
+
+
+
+print(
+    "##########################################################\n"
+    "Thank you for taking this quiz you got an environmentally friendly score of {} out of 4".format(
+        score))
+mark = score / num_of_q
+rounded_mark = round(mark, 10)
+print("You got a enviro mark of {}%".format(rounded_mark * 100))
+
+play_again()
