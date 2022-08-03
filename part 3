@@ -1,0 +1,36 @@
+import random
+
+#                               Informative part of programme
+
+landfill_fact_list = ["It is estimated that New Zealand generates 17.49 million tons of waste per year,"
+                      " 12.59 tonnes of that are sent to landfill",
+
+                      "There are 295 million hot and cold cups (like the ones you get your soft drink "
+                      "in at a fast food restaurant) used in New Zealand every year \n"
+                      " That's just less than 63 takeaway cups per person, per year.",
+
+                      "In 2016 New Zealanders sent an average of 730 kilograms to a landfill per person. "
+                      "NZ is currently one of the highest producers of waste in the developed world."
+                      ]
+
+landfill_fact = random.choices(landfill_fact_list, k=1)
+
+recycling_fact_list = ["Paper and cardboard can make up a quarter and a half of the entire household"
+                       " waste produced every year. In order to make new cardboard trees must be cut down. "
+                       "This leads to the destruction of habitat and wildlife.",
+
+                       "When cardboard ends up in landfill it increases the amount of methane that is released into"
+                       " the atmosphere. This also takes up unnecessary space which contributes to global warming."
+                       ]
+
+recycling_fact = random.choices(recycling_fact_list, k=1)
+
+stats_on_companies_list = ["Since 2016 Countdown NZ has reduced their emissions by 21 percen.",
+
+                           "Enviro Waste NZ uses modern engineering standards which means that waste"
+                           " facilities are constructed to have as little impact on the environment as possible.",
+
+                           "The warehouse from August 2019 to July 2020 has collected and diverted 30 tonnes of soft"
+                           " plastic from the landfill"]
+
+stats_on_companies = random.choices(stats_on_companies_list, k=1)
