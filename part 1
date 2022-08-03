@@ -1,0 +1,102 @@
+import pyfiglet
+import emoji
+
+score = 0
+num_of_q = 8
+
+
+# Function that prints WELCOME in a cool font. This is used on line 65
+def welcome_font():
+    welcome_message = pyfiglet.figlet_format("W E L C O M E !")
+    print(welcome_message)
+
+
+# Function that formally welcomes the user. This is used on line 66
+def welcome_user():
+    name = input("What is your name?: ").capitalize()
+    print("Welcome {}, how environmentally friendly are you? ".format(name))
+
+
+def run_quiz(score):
+    que = input("Question 1: Do you walk or drive to work/school? (walk/drive): ")
+    if que.lower() == "walk":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que.lower() == "drive":
+        print("Do better")
+
+    que_2 = input("Question 2: Do you or your household separate your rubbish and recycling? (yes/no): ")
+    if que_2.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_2.lower() == "no":
+        print("Do better")
+
+    que_3 = input("Question 3: Do you use any solar power in your household? (yes/no): ")
+    if que_3.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_3.lower() == "no":
+        print("Do better")
+
+    que_4 = input("Question 4: Do you donate clothes? (yes/no): ")
+    if que_4.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_4.lower() == "no":
+        print("Do better")
+
+    que_5 = input("Question 5: Do you reuse plastic containers? (yes/no): ")
+    if que_5.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_5.lower() == "no":
+        print("Do better")
+
+    que_6 = input(
+        "Question 6: When washing the dishes do you use a dishwasher or hand wash? (dishwasher/hand wash): ")
+    if que_6.lower() == "dishwasher":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_6.lower() == "hand wash":
+        print("Do better")
+
+    que_7 = input("Question 7: Typically are your showers less than 10? (yes/no): ")
+    if que_7.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_7.lower() == "no":
+        print("Do better")
+
+    que_8 = input("Question 8: Do you reuse used glass jars and plastic containers? (yes/no): ")
+    if que_8.lower() == "yes":
+        print("Nice! \U0001f600")
+        score += 1
+    elif que_8.lower() == "no":
+        print("Do better")
+
+    return score
+
+def take_quiz():
+    while True:
+        try:
+            quiz = input("Would you like to take the quiz? type (yes/no): ").strip().lower()
+            if quiz == "yes":
+                newscore =run_quiz(score)
+                break
+            elif quiz == "no":
+                print("Goodbye")
+                break
+        except:
+            break
+    return newscore
+
+
+#                                      Start of enviro friendly quiz
+
+welcome_font()
+welcome_user()
+
+newscore =take_quiz()
+
+print(newscore)
