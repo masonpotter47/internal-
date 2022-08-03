@@ -1,0 +1,106 @@
+import random
+import time
+
+
+# Function that is used after the user has typed 1,2,3 or 4. This displays the options again if they would like info
+def rerun_recycling_prompts():
+    time.sleep(5)
+    recycling_prompt = input("Welcome what would you like to know more about? \n"
+                             "Type 1 for a fact on New Zealands landfill \n"
+                             "Type 2 for Recycling \n"
+                             "Type 3 for Statistics on NZ companies \n"
+                             "Type 4 to end \n"
+                             "")
+    if recycling_prompt == "1":
+        print(landfill_fact)
+        rerun_recycling_prompts()
+
+    elif recycling_prompt == "2":
+        print(recycling_fact)
+        rerun_recycling_prompts()
+
+    elif recycling_prompt == "3":
+        print(stats_on_companies)
+        rerun_recycling_prompts()
+
+    elif recycling_prompt == "4":
+        print("Goodbye")
+
+    else:
+        print("Please enter a number 1-4")
+        rerun_recycling_prompts()
+
+
+#                               Informative part of programme
+
+landfill_fact_list = ["It is estimated that New Zealand generates 17.49 million tons of waste per year,"
+                      " 12.59 tonnes of that are sent to landfill",
+
+                      "There are 295 million hot and cold cups (like the ones you get your soft drink "
+                      "in at a fast food restaurant) used in New Zealand every year "
+                      " That's just less than 63 takeaway cups per person, per year.",
+
+                      "In 2016 New Zealanders sent an average of 730 kilograms to a landfill per person. \n"
+                      "NZ is currently one of the highest producers of waste in the developed world."
+                      ]
+
+landfill_fact = random.choices(landfill_fact_list, k=1)
+
+recycling_fact_list = ["Paper and cardboard can make up a quarter and a half of the entire household"
+                       " waste produced every year. In order to make new cardboard trees must be cut down. "
+                       "This leads to the destruction of habitat and wildlife.",
+
+                       "When cardboard ends up in landfill it increases the amount of methane that is released into "
+                       " the atmosphere. This also takes up unnecessary space which contributes to global warming."
+                       ]
+
+recycling_fact = random.choices(recycling_fact_list, k=1)
+
+stats_on_companies_list = ["Since 2016 Countdown NZ has reduced their emissions by 21 percent.",
+                           "Enviro Waste NZ uses modern engineering standards which means that waste"
+                           " facilities are constructed to have as little impact on the environment as possible.",
+                           "The warehouse from August 2019 to July 2020 has collected and diverted 30 tonnes of soft"
+                           " plastic from the landfill"]
+
+stats_on_companies = random.choices(stats_on_companies_list, k=1)
+
+
+
+
+
+
+
+
+#                           Beginning of 4th decomposition:
+recycling_prompt = input("Welcome what would you like to know more about? \n"
+                             "Type 1 for a fact on New Zealand's landfill \n"
+                             "Type 2 for Recycling \n"
+                             "Type 3 for Statistics on NZ companies \n"
+                             "Type 4 to end \n"
+                             "")
+
+if recycling_prompt == "1":
+    print(landfill_fact)
+    rerun_recycling_prompts()
+
+
+elif recycling_prompt == "2":
+    print(recycling_fact)
+    rerun_recycling_prompts()
+
+
+elif recycling_prompt == "3":
+    print(stats_on_companies)
+    rerun_recycling_prompts()
+
+elif recycling_prompt == "4":
+    print("Thanks for using this programme, goodbye! ")
+
+
+else:
+    print("Please enter a number 1-4")
+    rerun_recycling_prompts()
+
+
+
+
