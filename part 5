@@ -1,0 +1,90 @@
+def find_local_tips():
+    count = 0
+    auckland_regions_dict = {
+        "Central Auckland": 1,
+        "North Auckland": 2,
+        "South Auckland": 3,
+        "West Auckland": 2}
+
+
+    print("Welcome! This programme will help you locate your locale tip")
+    print("Central Auckland \n"
+          "North Auckland \n"
+          "South Auckland \n"
+          "West Auckland")
+    print("\n"
+          "Enter one of the regions listed above that relates to where you live")
+
+
+    # open file region to display list of regions
+
+    your_suburb = input("Whats region are you based in auckland?")
+    for k, v in auckland_regions_dict.items():
+        if k == your_suburb:
+            num = v
+    if your_suburb == "Central Auckland":
+        print("There is/are {} tip(s) in {}".format(num, your_suburb))
+        sub = open("auckland_central_tips", "r")
+        # print(sub.readlines())
+        for i in sub:
+            for word in i.split('#'):
+                print(word, end="")
+
+    elif your_suburb == "North Auckland":
+        sub = open("north_auckland_tips.txt", "r")
+        # print(sub.readlines())
+        for i in sub:
+            for word in i.split('#'):
+                print(word, end="")
+
+    elif your_suburb == "South Auckland":
+        sub = open("south_auckland_tips", "r")
+        # print(sub.readlines())
+        for i in sub:
+            for word in i.split('#'):
+                print(word, end="")
+
+    elif your_suburb == "West Auckland":
+        sub = open("west_auckland_tips", "r")
+        # print(sub.readlines())
+        for i in sub:
+            for word in i.split('#'):
+                print(word, end="")
+
+
+find_local_tips()
+
+'''def find_local_tips():
+    count = 0
+    auck_suburbs_dict = {"North Auckland": "Constellation Drive Refuse Transfer Station - 4 Home Place, Mairangi Bay - Ph(0800 240 120)",
+     "South Auckland": "Wiri Transfer Station - 196 Wiri Station Road - Ph(0800 240 120)", "Auckland Central": "Pikes Point Transfer Station - 81 Captain Springs Road Onehunga - Ph(0800 240 120)",
+    "West Auckland": "Patiki Road Transfer Station - 114 Patiki Road Avondale - Ph(09 820 5691)" }
+
+    print(auck_suburbs_dict)
+
+    ask_sub = input("Whats your region?: ")
+    for k,v in auck_suburbs_dict.items():
+        if k == ask_sub:
+            print(v)
+
+
+find_local_tips()
+# If suburb is not in list print these are the availble options
+# Part 5 of decomposistion
+def find_local_tips():
+    your_suburb = input("Whats your suburb?: ")
+    sub = open("suburbs.txt", "r")
+    lines = sub.readlines()
+
+    count = 0
+
+    for line in lines:
+        count += 1
+        if line.strip() == your_suburb:
+                    sub = open("north_auckland_tips.txt", "r")
+                    for i in sub:
+                        for word in i.split("#"):
+                            print(word, end="")
+
+
+find_local_tips()'''
